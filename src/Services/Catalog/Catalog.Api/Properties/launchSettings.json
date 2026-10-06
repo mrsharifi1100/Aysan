@@ -11,7 +11,10 @@
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
+
+      //Swagger When Start Project Run swagger end point
       "launchUrl": "swagger",
+
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

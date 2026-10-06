@@ -5,6 +5,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+#region Swagger Middleware and add PATH_BASE
 var pathBase = builder.Configuration["PATH_BASE"];
 
 if (!string.IsNullOrEmpty(pathBase))
@@ -21,7 +22,7 @@ if (app.Environment.IsDevelopment())
             $"{(!string.IsNullOrEmpty(pathBase) ? pathBase : string.Empty)}/swagger/v1/swagger.json", "Catalog.Api V1");
     });
 }
-
+#endregion
 
 app.UseHttpsRedirection();
 
