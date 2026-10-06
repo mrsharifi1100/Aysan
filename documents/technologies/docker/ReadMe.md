@@ -83,8 +83,8 @@ docker compose logs
 ## Related Files
 
 * [docker-compose.yml](../../../docker-compose.yml)
-* [docker-compose.override.yml](../../docker-compose.override.yml)
-* [.dockerignore](../../.dockerignore)
-* [.env](../.env)
-* [Catalog Dockerfile](../../src/Services/Catalog/Catalog.Api/Dockerfile)
-* [Catalog environment](../../catalog.env)
+* [docker-compose.override.yml](../../../docker-compose.override.yml)
+* [.dockerignore](../../../.dockerignore)
+* [.env](../../../.env)
+* [Catalog Dockerfile](../../../src/Services/Catalog/Catalog.Api/Dockerfile)
+* [Catalog environment](../../../catalog.env)
