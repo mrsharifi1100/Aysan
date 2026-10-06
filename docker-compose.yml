@@ -1,0 +1,7 @@
+name: Venome
+services:
+  catalog-api:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: ./src
+      dockerfile: Services/Catalog/Catalog.Api/Dockerfile

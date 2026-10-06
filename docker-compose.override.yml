@@ -1,0 +1,10 @@
+services:
+  #name of service
+  catalog-api:
+    #rout of catalog.env
+    env_file:
+      - ./catalog.env
+    #ports of catalog.api
+    ports:
+      - "${CATALOG_HTTP_PORT}:8080"
+      - "${CATALOG_HTTPS_PORT}:8081"
