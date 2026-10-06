@@ -10,6 +10,19 @@ Each service uses a Dockerfile to define how its container image is built.
 
 `src/Services/Catalog/Catalog.Api/Dockerfile`
 
+## Docker Compose
+
+
+Docker Compose is used to build and run the services and infrastructure components required by the Aysan system.
+
+The Compose configurations is located at:
+
+`docker-compose.yml`
+
+`docker-compose.override.yml`
+
+As new services and infrastructure components are added, they will be documented here.
+
 ## Build Stages
 
 The Dockerfiles use a multi-stage build process:
