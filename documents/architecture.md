@@ -133,8 +133,8 @@ Aysan/
 
 Detailed implementation and technology-specific documentation is available under:
 
-`docs/technologies/`
+[Technologies](./technologies)
 
 The step-by-step development process is documented under:
 
-`docs/phases/`
+[phases](./phases)
