@@ -6,7 +6,7 @@ Set up the initial solution structure and prepare the development environment fo
 
 ---
 
-### 1- Create Blank Solution
+### 1 - Create Blank Solution
 
 Aysan.sln
 
@@ -14,7 +14,7 @@ The solution starts empty because services and shared components will be added g
 
 ---
 
-### 2-create the source structure
+### 2 - create the source structure
 
 ```text
 src/
@@ -32,7 +32,7 @@ Contains reusable technical components shared between services.
 
 ---
 
-### 3-Create the First Service
+### 3 - Create the First Service
 
 ```text
 src/
@@ -52,7 +52,7 @@ src/
 
 ---
 
-### 4- Add the Project to the Soloution
+### 4 - Add the Project to the Soloution
 
 The Catalog API project is added to:
 
@@ -60,7 +60,7 @@ Aysan.Sln
 
 ---
 
-### 5. Initialize Git
+### 5 - Initialize Git
 
 Initialize the repository and create the initial Git history.
 
@@ -80,7 +80,7 @@ Repository Name is : Aysan
 
 Prepare the project for containerized development.
 
-The first Docker setup will provide a reproducible environment for running the services.
+At first Docker setup will provide a reproducible environment for running the services.
 
 The Dockerfile is located at:
 

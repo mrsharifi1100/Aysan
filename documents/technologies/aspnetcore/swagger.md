@@ -31,21 +31,25 @@ The configuration includes:
 * Swagger UI
 * Development environment configuration
 
-The implementation is located in:
+### Application Startup
 
-> for sartup of project
+The application startup and launch configuration are defined in:The implementation is located in:
 
 `src/services/catalog/catalog.api/propeties/launchsetting`
 
-> for path base because we have microservices projects
+### Application Settings
+
+Environment-specific application settings are defined in:
 
 `src/services/catalog/catalog.api/appsetting.development.json`
 
-> middlewares
+### Middleware Pipeline
+
+Swagger middleware and the HTTP request pipeline are configured in:
 
 `src/services/catalog/catalog.api/program.cs`
 
-> services
+### Service Registration
 
 `src/services/catalog/catalog.api/dependencyinjection.cs`
 
