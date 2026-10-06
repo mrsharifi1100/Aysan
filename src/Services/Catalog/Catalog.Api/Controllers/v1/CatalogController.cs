@@ -1,9 +1,7 @@
-﻿
-namespace Catalog.Api.Controllers
+﻿namespace Catalog.Api.Controllers.v1
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CatalogController : ControllerBase
+    
+    public class CatalogController : ApiVersionOneController
     {
         [HttpGet]
         public async Task<IActionResult> GetAllCatalogs()

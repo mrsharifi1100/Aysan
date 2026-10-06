@@ -4,7 +4,7 @@
 
 Add Swagger/OpenAPI documentation to the Catalog API to make the API endpoints easier to explore and test during development.
 
-## 1 - Installation
+## 1 - Install Packages
 
 Packages :
 
