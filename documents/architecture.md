@@ -94,7 +94,8 @@ Planned infrastructure includes:
 ```
 Aysan
 |
-|---
+|---Serilog
+|---Swagger
 ```
 
 ## Containerization
@@ -114,8 +115,16 @@ Aysan/
 |   |___Services/
 |   |    |___Catalog/
 |   |        |___Catalog.Api/
-|   |            |___Dockerfile
+|   |        |    |___Dockerfile
+|   |        |___Catalog.Domain/
+|   |        |___Catalog.Application/
+|   |        |___Catalog.Infrastructure/
+|   |
+|   |  
 |   |___BuildingBlocks/
+│         └── Logging/ 
+│               └── Common.Logging/ 
+│                     └── DependencyInjection.cs
 |
 |___docs/
 |

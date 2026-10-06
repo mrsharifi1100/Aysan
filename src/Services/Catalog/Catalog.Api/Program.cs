@@ -1,8 +1,12 @@
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApiServices();
-builder.Services.AddControllers();
 builder.Host.AddLoggingServices();
+builder.Services.AddInfrastructureAssembly();
+builder.Services.AddApplicationAssembly();
+
+builder.Services.AddControllers();
 var app = builder.Build();
 
 //Swagger Middleware

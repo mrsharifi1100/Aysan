@@ -39,6 +39,10 @@ src/
 ├── Services/
 │   └── Catalog/
 │       └── Catalog.Api/
+|       |__ Catalog.Domain/
+|       |__ Catalog.Application/
+|       |__ Catalog.Infrastructure/
+|   
 └── BuildingBlocks/
 ```
 
@@ -109,7 +113,11 @@ Aysan/
 |   |___Services/
 |   |    |___Catalog/
 |   |        |___Catalog.Api/
-|   |            |___Dockerfile
+|   |        |    |___Dockerfile
+|   |        |__ Catalog.Domain/
+|   |        |__ Catalog.Application/
+|   |        |__ Catalog.Infrastructure/
+|   |
 |   |___BuildingBlocks/
 |
 |___docs/

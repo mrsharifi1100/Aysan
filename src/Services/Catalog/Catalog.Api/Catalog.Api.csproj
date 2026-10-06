@@ -33,6 +33,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\Logging\Common.Logging\Common.Logging.csproj" />
+    <ProjectReference Include="..\Catalog.Application\Catalog.Application.csproj" />
+    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
+    <ProjectReference Include="..\Catalog.Infrastructure\Catalog.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
