@@ -1,6 +1,9 @@
 <Solution>
   <Folder Name="/src/" />
   <Folder Name="/src/BuildingBlocks/" />
+  <Folder Name="/src/BuildingBlocks/Logging/">
+    <Project Path="src/BuildingBlocks/Logging/Common.Logging/Common.Logging.csproj" Id="a0b5ef40-d5e1-421c-85b3-1ecbbdaaeda3" />
+  </Folder>
   <Folder Name="/src/Services/" />
   <Folder Name="/src/Services/Catalog/">
     <Project Path="src/Services/Catalog/Catalog.Api/Catalog.Api.csproj" />

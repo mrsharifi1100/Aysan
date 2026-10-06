@@ -1,6 +1,4 @@
-﻿using Asp.Versioning;
-
-namespace Catalog.Api;
+﻿namespace Catalog.Api;
 
 public static class DependencyInjection
 {

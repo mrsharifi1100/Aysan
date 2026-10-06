@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApiServices();
 builder.Services.AddControllers();
-
+builder.Host.AddLoggingServices();
 var app = builder.Build();
 
 //Swagger Middleware
@@ -23,6 +23,11 @@ if (app.Environment.IsDevelopment())
             $"{(!string.IsNullOrEmpty(pathBase) ? pathBase : string.Empty)}/swagger/v1/swagger.json", "Catalog.Api V1");
     });
 }
+#endregion
+
+#region Serilog
+
+
 #endregion
 
 app.UseHttpsRedirection();
