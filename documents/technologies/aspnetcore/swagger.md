@@ -92,5 +92,5 @@ For example, JWT Bearer authentication can later be configured so authenticated 
 
 * [Program.cs](../../../src/Services/Catalog/Catalog.Api/Program.cs)
 * [Dependency Injection](../../../src/Services/Catalog/Catalog.Api/DependencyInjection.cs)
-* [appsetting.Development.Json](../../../src/Services/Catalog/Catalog.Api/appsetting.Development.json)
-* [launchSetting.json](../../../src/Services/Catalog/Catalog.Api/launchSetting.json)
+* [appsetting.Development.Json](../../../src/Services/Catalog/Catalog.Api/appsettings.Development.json)
+* [launchSetting.json](../../../src/Services/Catalog/Catalog.Api/launchSettings.json)
