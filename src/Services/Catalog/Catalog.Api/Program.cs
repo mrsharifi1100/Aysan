@@ -5,6 +5,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+//Swagger Middleware
 #region Swagger Middleware and add PATH_BASE
 var pathBase = builder.Configuration["PATH_BASE"];
 
