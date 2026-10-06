@@ -74,4 +74,4 @@ Detailed API Versioning documentation is available in :
 ## Related Files :
 
 * [Dependency Injection](../../src/Services/Catalog/Catalog.Api/DependencyInjection.cs)
-* [Controllers](../../src/Services/Catalog/Catalog.Api/Controllers/)
+* [Controllers](../../src/Services/Catalog/Catalog.Api/Controllers/v1/)
