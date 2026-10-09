@@ -1,6 +1,8 @@
 # Phase 06 — SQL Server Infrastructure
 
-Set up SQL Server and configure the EF Core infrastructure for the Catalog service.
+## Goal
+
+Set up SQL Server for the Catalog service and establish the initial EF Core infrastructure, including database connectivity, `DbContext` registration, and design-time configuration for future migrations.
 
 ## 1 - Add SQL Server to Docker Compose
 
