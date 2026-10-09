@@ -35,6 +35,7 @@ Catalog.Infrastructure/
       |    |___ Context/
       |    |    |___ CatalogContext.cs
       |    |___ Migrations/
+      |    |___ Configurations/
   
 ```
 

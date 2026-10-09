@@ -113,42 +113,41 @@ Docker Compose
 
 Aysan/
 |
-|___src/
-|   |___Services/
-|   |    |___Catalog/
-|   |        |___Catalog.Api/
-|   |        |      |___Dockerfile
-|   |        |      |___Controllers
-|   |        |      |___Logs
-|   |        |___Catalog.Domain/
-|   |        |    |___AggregateModel/
-|   |        |        |___CatalogItemAggregate
-|   |        |        |___CatalogTypeAggregate
-|   |        |        |___
-|   |        |    |___Common/
-|   |        |    |___Exceptions/
-|   |        |___Catalog.Application/
-|   |        |___Catalog.Infrastructure/
-|   |             |___Features
-|   |                 |___Database
-|   |                     |___Configurations
-|   |                     |___Context
-|   |                     |___Migrations
+|___ src/
+|   |___ Services/
+|   |    |___ Catalog/
+|   |        |___ Catalog.Api/
+|   |        |      |___ Dockerfile
+|   |        |      |___ Controllers/
+|   |        |      |___ Logs/
+|   |        |___ Catalog.Domain/
+|   |        |    |___ AggregateModel/
+|   |        |    |   |___ CatalogItemAggregate/
+|   |        |    |   |___ CatalogTypeAggregate/
+|   |        |    |___ Common/
+|   |        |    |___ Exceptions/
+|   |        |___ Catalog.Application/
+|   |        |___ Catalog.Infrastructure/
+|   |             |___ Features
+|   |                 |___ Database
+|   |                     |___ Configurations/
+|   |                     |___ Context/
+|   |                     |___ Migrations/
 |   |
 |   |  
-|   |___BuildingBlocks/
+|   |___ BuildingBlocks/
 │         └── Logging/ 
 │               └── Common.Logging/ 
 |
-|___docs/
+|___ docs/
 |
-|___.env
-|___catalog.env
-|___docker-compose.yml
-|___docker-compose.override.yml
-|___.dockerignore
-|___.gitignore
-|___Aysan.Sln
+|___ .env
+|___ catalog.env
+|___ docker-compose.yml
+|___ docker-compose.override.yml
+|___ .dockerignore
+|___ .gitignore
+|___ Aysan.Sln
 
 ```
 
