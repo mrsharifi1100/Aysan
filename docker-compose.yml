@@ -6,7 +6,7 @@ services:
     build:
       context: ./src
       dockerfile: Services/Catalog/Catalog.Api/Dockerfile
-
+  # Sql Server Container
   catalog-db:
     image: mcr.microsoft.com/mssql/server:2022-latest
 
