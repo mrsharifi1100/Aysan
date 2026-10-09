@@ -44,6 +44,6 @@ SQL Server is configured through Docker Compose, and the Catalog service has the
 
 [CatalogContext](../../src/Services/Catalog/Catalog.Infrastructure/Features/Database/Context/CatalogContext.cs)
 
-[appsettings.Development.Json](../../../src/Services/Catalog/Catalog.Api/appsettings.Development.json)
+[appsettings.Development.Json](../../src/Services/Catalog/Catalog.Api/appsettings.Development.json)
 
-[docker-compose.yml](../../../docker-compose.yml)
+[docker-compose.yml](../../docker-compose.yml)
