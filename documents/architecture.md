@@ -96,6 +96,7 @@ Aysan
 |
 |---Serilog
 |---Swagger
+|---Sql Server
 ```
 
 ## Containerization
@@ -109,22 +110,35 @@ Docker Compose
 ## Project Structure
 
 ```
+
 Aysan/
 |
 |___src/
 |   |___Services/
 |   |    |___Catalog/
 |   |        |___Catalog.Api/
-|   |        |    |___Dockerfile
+|   |        |      |___Dockerfile
+|   |        |      |___Controllers
+|   |        |      |___Logs
 |   |        |___Catalog.Domain/
+|   |        |    |___AggregateModel/
+|   |        |        |___CatalogItemAggregate
+|   |        |        |___CatalogTypeAggregate
+|   |        |        |___
+|   |        |    |___Common/
+|   |        |    |___Exceptions/
 |   |        |___Catalog.Application/
 |   |        |___Catalog.Infrastructure/
+|   |             |___Features
+|   |                 |___Database
+|   |                     |___Configurations
+|   |                     |___Context
+|   |                     |___Migrations
 |   |
 |   |  
 |   |___BuildingBlocks/
 │         └── Logging/ 
 │               └── Common.Logging/ 
-│                     └── DependencyInjection.cs
 |
 |___docs/
 |

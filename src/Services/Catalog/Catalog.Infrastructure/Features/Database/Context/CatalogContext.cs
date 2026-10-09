@@ -6,8 +6,13 @@
         {
 
         }
+        public DbSet<CatalogItem> CatalogItems { get; set; }
+        public DbSet<CatalogType> CatalogTypes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new CatalogItemConfiguration());
+            modelBuilder.ApplyConfiguration(new CatalogTypeConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }

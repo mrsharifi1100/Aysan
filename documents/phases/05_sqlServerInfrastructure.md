@@ -1,4 +1,4 @@
-# Phase 06 — SQL Server Infrastructure
+# Phase 05 — SQL Server Infrastructure
 
 ## Goal
 

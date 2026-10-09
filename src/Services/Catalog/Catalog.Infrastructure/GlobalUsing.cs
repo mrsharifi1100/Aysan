@@ -4,3 +4,7 @@ global using Catalog.Infrastructure.Features.Database.Context;
 global using Microsoft.EntityFrameworkCore;
 global using Catalog.Infrastructure.Features.Database;
 global using Microsoft.EntityFrameworkCore.Design;
+global using Catalog.Domain.AggregateModel.CatalogItemAggregate;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Catalog.Domain.AggregateModel.CatalogTypeAggregate;
+global using Catalog.Infrastructure.Features.Database.Configuration;
