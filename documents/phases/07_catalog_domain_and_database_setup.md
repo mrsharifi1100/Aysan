@@ -53,7 +53,7 @@ The Catalog domain model is implemented, its EF Core mappings are configured, an
 ## Related Files
 
 * [CatalogItem.cs](../../src/Services/Catalog/Catalog.Domain/AggregateModel/CatalogItemAggregate/CatalogItem.cs)
-* [CatalogType.cs](../../src/Services/Catalog/Catalog.Domain/AggregateModel/CatalogTypeAggregate/CatalogItem.cs)
-* [CatalogItemConfiguration.cs](../../src/Services/Catalog/Catalog.Infrastructure/Features/Database/Congfigurations/CatalogItemConfiguration.cs)
-* [CatalogTypeConfiguration.cs](../../src/Services/Catalog/Catalog.Infrastructure/Features/Database/Congfigurations/CatalogItemConfiguration.cs)
+* [CatalogType.cs](../../src/Services/Catalog/Catalog.Domain/AggregateModel/CatalogTypeAggregate/CatalogType.cs)
+* [CatalogItemConfiguration.cs](../../src/Services/Catalog/Catalog.Infrastructure/Features/Database/Configurations/CatalogItemConfiguration.cs)
+* [CatalogTypeConfiguration.cs](../../src/Services/Catalog/Catalog.Infrastructure/Features/Database/Configurations/CatalogTypeConfiguration.cs)
 * [CatalogContext](../../src/Services/Catalog/Catalog.Infrastructure/Features/Database/Context/CatalogContext.cs)
