@@ -57,7 +57,7 @@ Detailed Swagger documentation is available in:
 
 ## Related Files
 
-* [Program.cs](../../../src/Services/Catalog/Catalog.Api/Program.cs)
-* [Dependency Injection](../../../src/Services/Catalog/Catalog.Api/DependencyInjection.cs)
-* [appsettings.Development.Json](../../../src/Services/Catalog/Catalog.Api/appsettings.Development.json)
-* [launchSettings.json](../../../src/Services/Catalog/Catalog.Api/Properties/launchSettings.json)
+* [Program.cs](../../src/Services/Catalog/Catalog.Api/Program.cs)
+* [Dependency Injection](../../src/Services/Catalog/Catalog.Api/DependencyInjection.cs)
+* [appsettings.Development.Json](../../src/Services/Catalog/Catalog.Api/appsettings.Development.json)
+* [launchSettings.json](../../src/Services/Catalog/Catalog.Api/Properties/launchSettings.json)
