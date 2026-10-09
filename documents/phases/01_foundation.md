@@ -4,15 +4,11 @@
 
 Set up the initial solution structure and prepare the development environment for the Aysan microservices system.
 
----
-
 ## 1 - Create Blank Solution
 
 Aysan.sln
 
 The solution starts empty because services and shared components will be added gradually.
-
----
 
 ## 2 - create the source structure
 
@@ -22,15 +18,13 @@ src/
 |___BuildingBlocks/
 ```
 
-## Services
+### Services
 
 Contains independently deployable business services.
 
-## BuildingBlocks
+### BuildingBlocks
 
 Contains reusable technical components shared between services.
-
----
 
 ## 3 - Create the First Service
 
@@ -54,15 +48,11 @@ src/
 * Type: ASP.NET Core Web API
 * Purpose: Entry point for the Catalog service
 
----
-
 ## 4 - Add the Project to the Soloution
 
 The Catalog API project is added to:
 
 Aysan.Sln
-
----
 
 ## 5 - Initialize Git
 
@@ -90,8 +80,6 @@ The Dockerfile is located at:
 
 `src/Services/Catalog/Catalog.Api/Dockerfile`
 
----
-
 ## 7 - Add Docker Compose
 
 Create:
@@ -99,8 +87,6 @@ Create:
 docker-compose.yml
 
 > **Important** : Create That file in root of project : `src/`
-
----
 
 ## 8 - Result
 

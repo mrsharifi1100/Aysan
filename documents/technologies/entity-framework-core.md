@@ -4,8 +4,6 @@ Entity Framework Core is an Object-Relational Mapper (ORM) used to interact with
 
 In Aysan, EF Core is used as the database access technology for the Catalog service.
 
----
-
 ## Why EF Core?
 
 EF Core provides:
@@ -14,8 +12,6 @@ EF Core provides:
 * Entity mapping using conventions and Fluent API.
 * Database schema management through migrations.
 * Integration with ASP.NET Core dependency injection.
-
----
 
 ## Installation
 
@@ -27,8 +23,6 @@ Required packages depend on the project responsibilities:
 * `Microsoft.EntityFrameworkCore.SqlServer`
 * `Microsoft.EntityFrameworkCore.Design`
 * `Microsoft.EntityFrameworkCore.Tools` (if required by the chosen tooling workflow)
-
----
 
 ## Project Structure
 
@@ -42,8 +36,6 @@ Catalog.Infrastructure/
 
 The Infrastructure project owns the database access implementation and EF Core configuration.
 
----
-
 ## DbContext
 
 `CatalogContext` is the EF Core database context.
@@ -54,8 +46,6 @@ Implementation:
 
 `src/Services/Catalog/Catalog.Infrastructure/Database/CatalogContext.cs`
 
----
-
 ## Dependency Injection
 
 The database context and SQL Server provider are registered through the Infrastructure dependency injection configuration.
@@ -65,8 +55,6 @@ This allows the application to obtain `CatalogContext` through dependency inject
 Implementation:
 
 `src/Services/Catalog/Catalog.Infrastructure/DependencyInjection.cs`
-
----
 
 ## Design-Time DbContext Factory
 
@@ -79,8 +67,6 @@ Implementation:
 `src/Services/Catalog/Catalog.Infrastructure/Database/CatalogContextFactory.cs`
 
 The factory is intended for design-time operations; normal application requests use the context registered through dependency injection.
-
----
 
 ## Entity Configuration
 
@@ -99,8 +85,6 @@ Database/
 
 No entity configurations have been added yet.
 
----
-
 ## Migrations
 
 EF Core migrations will be used to track and apply database schema changes.
@@ -108,8 +92,6 @@ EF Core migrations will be used to track and apply database schema changes.
 The initial migration will be created after the first persistent domain entities and their configurations are ready.
 
 Migration commands and the final migration location will be documented when this workflow is implemented.
-
----
 
 ## Related Documentation
 
