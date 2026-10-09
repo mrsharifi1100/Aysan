@@ -30,8 +30,12 @@ EF Core infrastructure is located in the Catalog Infrastructure project.
 
 ```text
 Catalog.Infrastructure/
-└── Database/
-    └── CatalogContext.cs
+      |___Features
+      |    |___ Database/
+      |    |___ Context/
+      |    |    |___ CatalogContext.cs
+      |    |___ Migrations/
+  
 ```
 
 The Infrastructure project owns the database access implementation and EF Core configuration.
@@ -78,9 +82,10 @@ Example future structure:
 
 ```text
 Database/
-├── CatalogContext.cs
-└── Configurations/
-    └── CatalogItemConfiguration.cs
+|___ Features
+|        |___ Configurations/
+|                |__ CatalogItemConfiguration.cs
+|                |__ CatalogTypeConfiguration.cs
 ```
 
 No entity configurations have been added yet.
