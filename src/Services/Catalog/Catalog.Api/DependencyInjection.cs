@@ -25,6 +25,29 @@ public static class DependencyInjection
             });
         #endregion
 
+        #region Cors Policy
+
+        services.AddCors(options =>
+        {
+            options.AddPolicy("NextJs", policy =>
+            {
+                policy
+                    .WithOrigins("http://localhost:3000")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            });
+        });
+
+        #endregion
+
+        #region Health Check
+
+        services.AddHealthChecks();
+
+        #endregion
+
+        
+
         return services;
     }
 }

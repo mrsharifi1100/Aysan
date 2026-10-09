@@ -3,7 +3,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApiServices();
 builder.Host.AddLoggingServices();
-builder.Services.AddInfrastructureAssembly();
+
+builder.Services.AddInfrastructureAssembly(builder.Configuration);
 builder.Services.AddApplicationAssembly();
 
 builder.Services.AddControllers();
@@ -29,13 +30,12 @@ if (app.Environment.IsDevelopment())
 }
 #endregion
 
-#region Serilog
-
-
-#endregion
+app.UseCors("NextJs");
 
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+app.MapHealthChecks("/health");
 
 app.Run();

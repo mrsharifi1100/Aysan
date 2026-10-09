@@ -1,12 +1,12 @@
 # Phase 01 — Foundation
 
-### Goal
+## Goal
 
 Set up the initial solution structure and prepare the development environment for the Aysan microservices system.
 
 ---
 
-### 1 - Create Blank Solution
+## 1 - Create Blank Solution
 
 Aysan.sln
 
@@ -14,7 +14,7 @@ The solution starts empty because services and shared components will be added g
 
 ---
 
-### 2 - create the source structure
+## 2 - create the source structure
 
 ```text
 src/
@@ -22,17 +22,17 @@ src/
 |___BuildingBlocks/
 ```
 
-### Services
+## Services
 
 Contains independently deployable business services.
 
-### BuildingBlocks
+## BuildingBlocks
 
 Contains reusable technical components shared between services.
 
 ---
 
-### 3 - Create the First Service
+## 3 - Create the First Service
 
 ```text
 src/
@@ -48,7 +48,7 @@ src/
 
 `Catalog.Api`  is an ASP.NET Core Web API project.Catalog.Api
 
-### Project
+## Project
 
 * Framework: .NET 10
 * Type: ASP.NET Core Web API
@@ -56,7 +56,7 @@ src/
 
 ---
 
-### 4 - Add the Project to the Soloution
+## 4 - Add the Project to the Soloution
 
 The Catalog API project is added to:
 
@@ -64,7 +64,7 @@ Aysan.Sln
 
 ---
 
-### 5 - Initialize Git
+## 5 - Initialize Git
 
 Initialize the repository and create the initial Git history.
 
@@ -80,7 +80,7 @@ Repository Name is : Aysan
 
 ---
 
-### 6 - Add Docker Support
+## 6 - Add Docker Support
 
 Prepare the project for containerized development.
 
@@ -92,7 +92,7 @@ The Dockerfile is located at:
 
 ---
 
-### 7 - Add Docker Compose
+## 7 - Add Docker Compose
 
 Create:
 
@@ -102,7 +102,7 @@ docker-compose.yml
 
 ---
 
-### 8 - Result
+## 8 - Result
 
 At the end of this phase , the project should have the following Structure
 
