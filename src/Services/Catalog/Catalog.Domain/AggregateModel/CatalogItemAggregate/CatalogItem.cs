@@ -36,6 +36,27 @@ public class CatalogItem : Entity, IAggregateRoot
         StockThreshold = stockThreshold;
         MaxStockThreshold = maxStockThreshold;
     }
+    public void Update(
+        string name,
+        decimal price,
+        string? description,
+        bool isDiscount,
+        long catalogTypeId,
+        int availableStock,
+        int stockThreshold,
+        int maxStockThreshold)
+    {
+        ValidateName(name);
+        Name = name;
+        Price = price;
+        Description = description;
+        IsDiscount = isDiscount;
+        CatalogTypeId = catalogTypeId;
+        AvailableStock = availableStock;
+        StockThreshold = stockThreshold;
+        MaxStockThreshold = maxStockThreshold;
+    }
+
     private static void ValidateName(string name)
     {
         if (string.IsNullOrWhiteSpace(name))

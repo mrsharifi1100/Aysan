@@ -8,3 +8,5 @@ global using Catalog.Domain.AggregateModel.CatalogItemAggregate;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Catalog.Domain.AggregateModel.CatalogTypeAggregate;
 global using Catalog.Infrastructure.Features.Database.Configuration;
+global using Catalog.Infrastructure.Features.Database.Repositories;
+global using Catalog.Domain.Common;

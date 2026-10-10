@@ -7,6 +7,11 @@ public class CatalogType : Entity, IAggregateRoot
         ValidateType(type);
         Type = type;
     }
+    public void Update(string? type)
+    {
+        ValidateType(type);
+        Type = type;
+    }
     public string? Type {  get; private set; }
     private static void ValidateType(string name)
     {

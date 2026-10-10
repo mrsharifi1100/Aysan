@@ -14,6 +14,10 @@ public static class DependencyInjection
                         errorNumbersToAdd: null);
             })
         );
+
+        services.AddScoped<ICatalogTypeRepository,CatalogTypeRepository>();
+        services.AddScoped<ICatalogItemRepository, CatalogItemRepository>();
+
         return services;
     }
 }

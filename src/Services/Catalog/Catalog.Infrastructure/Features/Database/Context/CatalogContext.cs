@@ -1,6 +1,8 @@
-﻿namespace Catalog.Infrastructure.Features.Database.Context
+﻿using Catalog.Domain.Common;
+
+namespace Catalog.Infrastructure.Features.Database.Context
 {
-    public class CatalogContext : DbContext
+    public class CatalogContext : DbContext,IUnitOfWork
     {
         public CatalogContext(DbContextOptions options) : base(options)
         {
@@ -8,6 +10,14 @@
         }
         public DbSet<CatalogItem> CatalogItems { get; set; }
         public DbSet<CatalogType> CatalogTypes { get; set; }
+
+        public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
+        {
+            var result = await SaveChangesAsync(cancellationToken);
+
+            return result > 0;
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CatalogItemConfiguration());
