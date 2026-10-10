@@ -1,4 +1,4 @@
-# Phase 12 — Catalog Repository and Unit of Work
+# Phase 08 — Catalog Repository and Unit of Work
 
 ## Goal
 
