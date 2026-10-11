@@ -7,3 +7,4 @@ global using Catalog.Infrastructure;
 global using MediatR;
 global using Catalog.Application.Features.Catalog.GetAllCatalogType.Query;
 global using Catalog.Application.Features.Catalog.GetCatalogItem.Query;
+global using Catalog.Application.Features.Catalog.CreateCatalogType.Command;

@@ -12,18 +12,19 @@ public class CreateCatalogCommandHandler : IRequestHandler<CreateCatalogCommand,
     public async Task<long> Handle(CreateCatalogCommand request, CancellationToken cancellationToken)
     {
         CatalogItem catalogItem = new CatalogItem(
-        name: request.Name,
-        price: request.Price,
-        description: request.Description,
-        isDiscount: request.IsDiscount,
-        catalogTypeId: request.CatalogTypeId,
-        availableStock: request.AvailableStock,
-        stockThreshold: request.StockThreshold,
-        maxStockThreshold: request.MaxStockThreshold);
+            name: request.Name,
+            price: request.Price,
+            description: request.Description,
+            isDiscount: request.IsDiscount,
+            catalogTypeId: request.CatalogTypeId,
+            availableStock: request.AvailableStock,
+            stockThreshold: request.StockThreshold,
+            maxStockThreshold: request.MaxStockThreshold);
 
         _catalogItemRepository.Add(catalogItem);
 
-        await _catalogItemRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+        await _catalogItemRepository.UnitOfWork
+            .SaveEntitiesAsync(cancellationToken);
 
         return catalogItem.Id;
     }
