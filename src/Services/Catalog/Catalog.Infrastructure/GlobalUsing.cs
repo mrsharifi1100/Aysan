@@ -10,3 +10,12 @@ global using Catalog.Domain.AggregateModel.CatalogTypeAggregate;
 global using Catalog.Infrastructure.Features.Database.Configuration;
 global using Catalog.Infrastructure.Features.Database.Repositories;
 global using Catalog.Domain.Common;
+global using Catalog.Infrastructure.Features.Database.Options;
+global using Catalog.Application.Features.Catalog;
+global using Microsoft.Extensions.Options;
+global using Dapper;
+global using Microsoft.Data.SqlClient;
+
+global using Catalog.Application.Features.Catalog.GetAllCatalogItem.Vm;
+global using Catalog.Application.Features.Catalog.GetAllCatalogType.Vm;
+global using Catalog.Application.Features.Catalog.GetCatalogItem.Vm;

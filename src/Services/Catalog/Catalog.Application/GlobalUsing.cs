@@ -6,3 +6,7 @@ global using Catalog.Application.Features.Catalog.UpdateCatalogItem.Command;
 global using Catalog.Application.Features.Catalog.CreateCatalogType.Command;
 global using Catalog.Domain.AggregateModel.CatalogTypeAggregate;
 global using Catalog.Application.Features.Catalog.UpdateCatalogType.Command;
+global using Catalog.Application.Features.Catalog.GetAllCatalogItem.Vm;
+global using Catalog.Application.Features.Catalog.GetAllCatalogType.Vm;
+global using Catalog.Application.Features.Catalog.GetCatalogItem.Vm;
+global using Catalog.Application.Features.Catalog.GetCatalogItem.Query;

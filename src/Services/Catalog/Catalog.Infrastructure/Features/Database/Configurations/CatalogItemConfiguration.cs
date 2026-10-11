@@ -6,10 +6,12 @@ public class CatalogItemConfiguration
     public void Configure(EntityTypeBuilder<CatalogItem> builder)
     {
         builder.ToTable("CatalogItem");
+        builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Id)
             .UseHiLo("catalog_hilo")
             .IsRequired();
+
 
         builder.Property(x => x.Name)
             .IsRequired()

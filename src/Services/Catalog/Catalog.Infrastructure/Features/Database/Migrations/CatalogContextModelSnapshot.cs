@@ -27,7 +27,7 @@ namespace Catalog.Infrastructure.Features.Database.Migrations
             modelBuilder.HasSequence("catalog_type_hilo")
                 .IncrementsBy(10);
 
-            modelBuilder.Entity("Catalog.Domain.AggregateModel.CatalogAggregate.CatalogItem", b =>
+            modelBuilder.Entity("Catalog.Domain.AggregateModel.CatalogItemAggregate.CatalogItem", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,7 +84,7 @@ namespace Catalog.Infrastructure.Features.Database.Migrations
                     b.ToTable("CatalogType", (string)null);
                 });
 
-            modelBuilder.Entity("Catalog.Domain.AggregateModel.CatalogAggregate.CatalogItem", b =>
+            modelBuilder.Entity("Catalog.Domain.AggregateModel.CatalogItemAggregate.CatalogItem", b =>
                 {
                     b.HasOne("Catalog.Domain.AggregateModel.CatalogTypeAggregate.CatalogType", "CatalogType")
                         .WithMany()
