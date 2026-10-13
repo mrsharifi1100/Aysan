@@ -77,7 +77,7 @@ Catalog-specific exceptions are mapped to consistent HTTP responses, while unhan
 
 ## Related Files
 
-* [Common.ErroHandler](../../src/BuildingBlocks/ErrorHandler/Commo.ErrorHandler/)
+* [Common.ErroHandler](../../src/BuildingBlocks/ErrorHandler/Common.ErrorHandler/)
 * [Dependency Injection](../../src/Services/Catalog/Catalog.Api/DependencyInjection.cs)
 * [Dependency Injection](../../src/Services/Catalog/Catalog.Api/ExceptionHandling/CatalogExceptionMapper.cs)
 * [Program](../../src/Services/Catalog/Catalog.Api/Program.cs)
