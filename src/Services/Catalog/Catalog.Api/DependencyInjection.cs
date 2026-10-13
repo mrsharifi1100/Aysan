@@ -2,8 +2,13 @@
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddApiServices(this IServiceCollection services)
+    public static IServiceCollection AddApiServices(this IServiceCollection services,IConfiguration configuration)
     {
+        services.AddInfrastructureAssembly(configuration);
+        services.AddApplicationAssembly();
+        services.AddCommonErrorHandling();
+
+        services.AddControllers();
         // Swagger Services
         #region Swagger Service
         services.AddSwaggerGen();
