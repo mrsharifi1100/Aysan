@@ -1,4 +1,11 @@
-﻿namespace Common.ErrorHandler;
+﻿using System.ComponentModel.DataAnnotations;
+using Common.ErrorHandler;
+using FluentValidation;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Common.ErrorHandler;
+
 public sealed class GlobalExceptionHandler : IExceptionHandler
 {
     private readonly IEnumerable<IExceptionToProblemDetailsMapper> _mappers;
@@ -19,12 +26,42 @@ public sealed class GlobalExceptionHandler : IExceptionHandler
     {
         ProblemDetails? problemDetails = null;
 
-        foreach (var mapper in _mappers)
+        // 1. Handle FluentValidation errors
+        if (exception is FluentValidation.ValidationException validationException)
         {
-            if (mapper.TryMap(exception, out problemDetails))
-                break;
+            problemDetails = new ProblemDetails
+            {
+                Status = StatusCodes.Status400BadRequest,
+                Title = "Validation failed",
+                Detail = "One or more validation errors occurred."
+            };
+
+            problemDetails.Extensions["code"] = "VALIDATION_ERROR";
+
+            problemDetails.Extensions["errors"] =
+                validationException.Errors
+                    .GroupBy(error => error.PropertyName)
+                    .ToDictionary(
+                        group => group.Key,
+                        group => group
+                            .Select(error => error.ErrorMessage)
+                            .ToArray());
+
+            _logger.LogWarning(
+                "Validation failed. ErrorCount: {ErrorCount}",
+                validationException.Errors.Count());
+        }
+        else
+        {
+            // 2. Handle service-specific exceptions
+            foreach (var mapper in _mappers)
+            {
+                if (mapper.TryMap(exception, out problemDetails))
+                    break;
+            }
         }
 
+        // 3. Handle unknown exceptions
         if (problemDetails is null)
         {
             _logger.LogError(

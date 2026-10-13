@@ -33,9 +33,6 @@ public class CreateCatalogCommandHandler : IRequestHandler<CreateCatalogCommand,
 
         _catalogItemRepository.Add(catalogItem);
 
-        await _catalogItemRepository.UnitOfWork
-            .SaveEntitiesAsync(cancellationToken);
-
         return catalogItem.Id;
     }
 }

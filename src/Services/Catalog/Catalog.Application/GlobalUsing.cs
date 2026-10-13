@@ -10,3 +10,6 @@ global using Catalog.Application.Features.Catalog.GetAllCatalogItem.Vm;
 global using Catalog.Application.Features.Catalog.GetAllCatalogType.Vm;
 global using Catalog.Application.Features.Catalog.GetCatalogItem.Vm;
 global using Catalog.Application.Features.Catalog.GetCatalogItem.Query;
+global using Catalog.Application.Behaviors;
+global using FluentValidation;
+global using Microsoft.Extensions.Logging;

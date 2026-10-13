@@ -15,7 +15,13 @@ global using Catalog.Application.Features.Catalog;
 global using Microsoft.Extensions.Options;
 global using Dapper;
 global using Microsoft.Data.SqlClient;
-
 global using Catalog.Application.Features.Catalog.GetAllCatalogItem.Vm;
 global using Catalog.Application.Features.Catalog.GetAllCatalogType.Vm;
 global using Catalog.Application.Features.Catalog.GetCatalogItem.Vm;
+global using Microsoft.EntityFrameworkCore.Storage;
+global using Catalog.Application.Common.Extentions;
+global using MediatR;
+global using Microsoft.Extensions.Logging;
+global using Serilog.Context;
+global using Catalog.Infrastructure.Behavior;
+
