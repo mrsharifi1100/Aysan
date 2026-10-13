@@ -87,3 +87,4 @@ Database transaction management is centralized in `CatalogContext` and `Transact
 
 * [CatalogContext](../../src/Services/Catalog/Catalog.Infrastructure/Features/Database/Context/CatalogContext.cs)
 * [TransActionBehavior](../../src/Services/Catalog/Catalog.Infrastructure/Behavior/TransactionBehaviour.cs)
+* [DependencyInjection.cs](../../src/Services/Catalog/Catalog.Infrastructure/Features/Database/DependencyInjection.cs)
