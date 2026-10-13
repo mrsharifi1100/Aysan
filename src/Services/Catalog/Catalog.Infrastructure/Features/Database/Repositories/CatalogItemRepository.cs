@@ -15,6 +15,14 @@
             return _context.Add(item).Entity;
         }
 
+        public async Task<bool> ExistsByNameAsync(string name, CancellationToken cancellationToken)
+        {
+            return await _context.CatalogItems
+                .AnyAsync(
+                    x => x.Name == name,
+                    cancellationToken);
+        }
+
         public async Task<IEnumerable<CatalogItem>> Get(long[] ids)
         {
             var items = await _context.CatalogItems.Where(ci => ids.Contains(ci.Id)).ToListAsync();

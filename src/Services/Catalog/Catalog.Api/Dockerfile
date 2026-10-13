@@ -15,6 +15,7 @@ COPY ["Services/Catalog/Catalog.Domain/Catalog.Domain.csproj", "Services/Catalog
 COPY ["Services/Catalog/Catalog.Application/Catalog.Application.csproj", "Services/Catalog/Catalog.Application/"]
 COPY ["Services/Catalog/Catalog.Infrastructure/Catalog.Infrastructure.csproj", "Services/Catalog/Catalog.Infrastructure/"]
 COPY ["BuildingBlocks/Logging/Common.Logging/Common.Logging.csproj", "BuildingBlocks/Logging/Common.Logging/"]
+COPY ["BuildingBlocks/ErrorHandler/Common.ErrorHandler/Common.ErrorHandler.csproj", "BuildingBlocks/ErrorHandler/Common.ErrorHandler/"]
 
 RUN dotnet restore "Services/Catalog/Catalog.Api/Catalog.Api.csproj"
 

@@ -1,4 +1,6 @@
-﻿namespace Catalog.Application.Features.Catalog.CreateCatalogItem.Handler;
+﻿using Catalog.Application.Features.Catalog.Exceptions.CatalogItem;
+
+namespace Catalog.Application.Features.Catalog.CreateCatalogItem.Handler;
 
 public class CreateCatalogCommandHandler : IRequestHandler<CreateCatalogCommand, long>
 {
@@ -11,6 +13,14 @@ public class CreateCatalogCommandHandler : IRequestHandler<CreateCatalogCommand,
 
     public async Task<long> Handle(CreateCatalogCommand request, CancellationToken cancellationToken)
     {
+        bool exists = await _catalogItemRepository.ExistsByNameAsync(
+        request.Name,
+        cancellationToken);
+
+        if (exists)
+        {
+            throw new CatalogItemAlreadyExistsException(request.Name);
+        }
         CatalogItem catalogItem = new CatalogItem(
             name: request.Name,
             price: request.Price,

@@ -1,4 +1,3 @@
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApiServices();
@@ -6,6 +5,7 @@ builder.Host.AddLoggingServices();
 
 builder.Services.AddInfrastructureAssembly(builder.Configuration);
 builder.Services.AddApplicationAssembly();
+builder.Services.AddCommonErrorHandling();
 
 builder.Services.AddControllers();
 var app = builder.Build();
@@ -37,5 +37,7 @@ app.UseHttpsRedirection();
 app.MapControllers();
 
 app.MapHealthChecks("/health");
+
+app.UseCommonErrorHandling();
 
 app.Run();

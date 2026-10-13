@@ -7,4 +7,5 @@ public interface ICatalogItemRepository: IRepository<CatalogItem>
     Task<IEnumerable<CatalogItem>> Get(long[] ids);
     Task<CatalogItem> GetByIdAsync(long id);
     Task<IEnumerable<CatalogItem>> GetByPagingAsync(int pageSize, int PageIndex);
+    Task<bool> ExistsByNameAsync(string name,CancellationToken cancellationToken);
 }

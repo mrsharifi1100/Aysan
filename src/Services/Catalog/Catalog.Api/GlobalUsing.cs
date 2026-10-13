@@ -8,3 +8,7 @@ global using MediatR;
 global using Catalog.Application.Features.Catalog.GetAllCatalogType.Query;
 global using Catalog.Application.Features.Catalog.GetCatalogItem.Query;
 global using Catalog.Application.Features.Catalog.CreateCatalogType.Command;
+global using Common.ErrorHandler;
+global using Catalog.Application.Features.Catalog.Exceptions.CatalogItem;
+global using Microsoft.AspNetCore.Diagnostics;
+global using Catalog.Api.ExceptionHandling;

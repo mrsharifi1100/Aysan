@@ -1,6 +1,9 @@
 <Solution>
   <Folder Name="/src/" />
   <Folder Name="/src/BuildingBlocks/" />
+  <Folder Name="/src/BuildingBlocks/ErrorHandler/">
+    <Project Path="src/BuildingBlocks/ErrorHandler/Common.ErrorHandler/Common.ErrorHandler.csproj" Id="520c419e-73c8-4b8a-b150-65364dc84fc7" />
+  </Folder>
   <Folder Name="/src/BuildingBlocks/Logging/">
     <Project Path="src/BuildingBlocks/Logging/Common.Logging/Common.Logging.csproj" Id="a0b5ef40-d5e1-421c-85b3-1ecbbdaaeda3" />
   </Folder>
