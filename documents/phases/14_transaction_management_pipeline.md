@@ -82,3 +82,8 @@ Test transaction behavior through the Catalog application.
 ## Result
 
 Database transaction management is centralized in `CatalogContext` and `TransactionBehaviour`. Command handlers no longer need to manage ordinary transaction lifecycles or call `SaveChangesAsync()` explicitly when persistence is handled by the pipeline. Database changes are committed consistently, and integration event publication occurs after successful transaction completion.
+
+## Related files
+
+* [CatalogContext](../../src/Services/Catalog/Catalog.Infrastructure/Features/Database/Context/CatalogContext.cs)
+* [TransActionBehavior](../../src/Services/Catalog/Catalog.Infrastructure/Behavior/TransactionBehaviour.cs)

@@ -25,7 +25,5 @@ public class UpdateCatalogCommandHandler : IRequestHandler<UpdateCatalogItemComm
         );
 
         _catalogItemRepository.Update(catalogItem);
-
-        await _catalogItemRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
     }
 }

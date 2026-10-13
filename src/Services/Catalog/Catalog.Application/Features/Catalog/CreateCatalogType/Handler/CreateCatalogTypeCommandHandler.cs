@@ -15,8 +15,6 @@ public class CreateCatalogTypeCommandHandler : IRequestHandler<CreateCatalogType
 
         _catalogTypeRepository.Add(catalogType);
 
-        await _catalogTypeRepository.UnitOfWork.SaveEntitiesAsync();
-
         return catalogType.Id;
     }
 }
