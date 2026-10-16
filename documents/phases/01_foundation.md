@@ -42,19 +42,13 @@ src/
 
 `Catalog.Api`  is an ASP.NET Core Web API project.Catalog.Api
 
-## Project
+### Project
 
 * Framework: .NET 10
 * Type: ASP.NET Core Web API
 * Purpose: Entry point for the Catalog service
 
-## 4 - Add the Project to the Soloution
-
-The Catalog API project is added to:
-
-Aysan.Sln
-
-## 5 - Initialize Git
+## 4 - Initialize Git
 
 Initialize the repository and create the initial Git history.
 
@@ -68,9 +62,7 @@ Initial project structure
 
 Repository Name is : Aysan
 
----
-
-## 6 - Add Docker Support
+## 5 - Add Docker Support
 
 Prepare the project for containerized development.
 
@@ -80,7 +72,7 @@ The Dockerfile is located at:
 
 `src/Services/Catalog/Catalog.Api/Dockerfile`
 
-## 7 - Add Docker Compose
+## 6 - Add Docker Compose
 
 Create:
 
@@ -88,7 +80,7 @@ docker-compose.yml
 
 > **Important** : Create That file in root of project : `src/`
 
-## 8 - Result
+## Result
 
 At the end of this phase , the project should have the following Structure
 
@@ -115,5 +107,4 @@ Aysan/
 |___.dockerignore
 |___.gitignore
 |___Aysan.Sln
-
 ```

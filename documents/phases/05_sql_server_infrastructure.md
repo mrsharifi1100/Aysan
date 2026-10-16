@@ -4,9 +4,17 @@
 
 Set up SQL Server for the Catalog service and establish the initial EF Core infrastructure, including database connectivity, `DbContext` registration, and design-time configuration for future migrations.
 
-## 1 - Add SQL Server to Docker Compose
+## Tip
 
-Add the SQL Server container to `<span>docker-compose.yml</span>`.
+You Need This Packages :
+
+* Microsoft.EntityFrameworkCore
+  Microsoft.EntityFrameworkCore.Design
+  Microsoft.EntityFrameworkCore.SqlServer
+
+## 1 - Add SQL Server Image to Docker Compose
+
+Add the SQL Server container to `docker-compose.yml`.
 
 Configure environment variables, port mapping, and persistent storage.
 
@@ -18,23 +26,23 @@ Add the SQL Server connection string to the application configuration in :
 
 Configure the connection settings for local development and Docker environments.
 
-## 3 - Create DbContext
+## 3 - Create and Configure CatalogContext
 
-Create `CatalogContext` in the Infrastructure project.
+Before creating the `CatalogContext`, create a `Features` folder in the Infrastructure project, then create a `Database` folder inside it.
 
-Place the context inside the `Database` folder.
+Create the `CatalogContext` class inside the `Features/Database` folder and configure it for use with Entity Framework Core.
 
-## 4 - Register Database Services
+## 4 - Configure Design-Time DbContext
 
-Configure EF Core and SQL Server in the Infrastructure dependency injection setup.
-
-Register `<span>CatalogContext</span>` for use by the application.
-
-## 5 - Configure Design-Time DbContext
-
-Implement `IDesignTimeDbContextFactory<CatalogContext>`
+Implement `IDesignTimeDbContextFactory<CatalogContext>` in `CatalogContext`
 
 Prepare EF Core tooling to create the context for migration commands.
+
+## 5 - Register Database Services
+
+Configure the SQL Server connection and register `CatalogContext` in the Infrastructure dependency injection setup.
+
+Register the required EF Core database services in the `DependencyInjection.cs` file.
 
 ## Result
 

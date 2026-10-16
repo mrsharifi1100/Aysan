@@ -10,23 +10,31 @@ Create `ICatalogItemReadRepository`and`ICatalogTypeReadRepository` in the Catalo
 
 These interfaces define the contracts for reading catalog items and catalog types.
 
+> Each interface must be placed within its own specific domain.
+
 ## 2 - Implement Read Repositories
 
-Implement both interfaces using Dapper in the Infrastructure layer.
+Implement both interfaces using Dapper in the Infrastructure layer :
+
+`src/Services/Catalog/Catalog.Infrastructure/Features/Database/Dapper/`
 
 Keep the SQL queries and database access logic inside the Infrastructure project.
 
-## 3 - Configure Database Connection
+## Tip - Configure Database Connection
 
 Add the connection string configuration to the database options.
 
 Configure the connection settings required by the Dapper read repositories.
 
-## 4 - Register Services
+you need this package :
+
+`Microsoft.Extensions.Options.ConfigurationExtensions`
+
+## 3 - Register Services
 
 Register the Dapper read repository implementations in the Infrastructure dependency injection configuration.
 
-## 5 - Integrate with CQRS
+## 4 - Integrate with CQRS
 
 Use the read repository interfaces in the Application layer to implement Catalog query handlers.
 

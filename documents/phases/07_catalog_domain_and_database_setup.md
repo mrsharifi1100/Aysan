@@ -6,24 +6,30 @@ Implement the initial Catalog domain model, configure its persistence using EF C
 
 ## 1 - Create Catalog Domain Entities
 
-Create the initial domain entities:
+In the Domain project, create an `AggregateModel` folder to organize domain aggregates.
 
-* `CatalogItem`
-* `CatalogType`
+Create the following folders inside `AggregateModel`:
+
+* `CatalogItemAggregate`
+* `CatalogTypeAggregate`
+
+Create the `CatalogItem` entity inside `CatalogItemAggregate` and the `CatalogType` entity inside `CatalogTypeAggregate`.
+
+Both entities should inherit from the `Entity` base class and implement the `IAggregateRoot` interface.
 
 Define their properties, constructors, and initial domain validation rules.
 
-## 2 - Define Aggregate Roots
-
-Identify the aggregate roots in the Catalog domain and implement `IAggregateRoot` where appropriate.
-
-## 3 - Add Domain Exceptions
+## 2- Add Domain Exceptions
 
 Create `CatalogDomainException` for domain rule violations shared by the Catalog domain entities.
 
-## 4 - Configure EF Core Entity Mapping
+## 3- Add Entities Configurations
 
 Create entity configuration classes for `CatalogItem` and `CatalogType`.
+
+Configurations folder located in :
+
+`src/Services/Catalog/Catalog.Infrastructure/Features/Database/Configurations/`
 
 Configure:
 
@@ -32,17 +38,19 @@ Configure:
 * Decimal precision for prices
 * The relationship between `CatalogItem` and `CatalogType`
 
-## 5 - Apply Entity Configurations
+## 4 - Apply Configurations
 
 Register the entity configurations with `CatalogContext` so EF Core can build the database model.
 
-## 6 - Create Initial Migration
+## 5 - Create Migration
 
 Generate the initial EF Core migration for the Catalog entities.
 
+> you must rund the migration at folder `src/Services/Catalog/`
+
 Review the generated migration to verify the expected tables, columns, constraints, and foreign key relationship.
 
-## 7 - Apply Migration
+## 6 - Apply Migration
 
 Apply the migration to SQL Server and verify that the database schema has been created successfully.
 

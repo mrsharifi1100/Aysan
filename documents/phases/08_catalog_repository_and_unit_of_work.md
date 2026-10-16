@@ -6,22 +6,24 @@ Implement the Repository and Unit of Work patterns for the Catalog aggregates, d
 
 ## 1 - Define Unit of Work Abstractions
 
-Create the shared abstractions:
+Create the shared abstractions in :
+
+`src/Services/Catalog/Catalog.Domain/Common`
 
 * `IUnitOfWork`
 * `IRepository<T>`
 
-Define `SaveEntitiesAsync` in `IUnitOfWork` and expose `IUnitOfWork` through `<span>IRepository<T></span>` where required.
+Define `SaveEntitiesAsync` in `IUnitOfWork` and expose `IUnitOfWork` through `IRepository<T>` where required.
 
 ## 2 - Implement Unit of Work in CatalogContext
-
-Implement `IUnitOfWork` in `CatalogContext`.
 
 Implement `SaveEntitiesAsync` using EF Core's `SaveChangesAsync` to persist pending changes.
 
 ## 3 - Define Catalog Repository Contracts
 
 Create the repository interfaces for their respective aggregate roots:
+
+> Each repository must be located within its own designated aggregator root.
 
 * `ICatalogItemRepository`
 * `ICatalogTypeRepository`
@@ -32,7 +34,7 @@ Define the data access operations required by the Catalog domain and application
 
 Create the repository implementations in:
 
-`<span>Infrastructure/Features/Database/Repositories</span>`
+`Infrastructure/Features/Database/Repositories`
 
 Implement:
 
@@ -41,24 +43,15 @@ Implement:
 
 Use `CatalogContext` to access and persist aggregate data, and provide access to `IUnitOfWork` through `IRepository<T>` where required.
 
-## 5 - Register Repository Dependencies
+## 5 - Register Repository Service lifeTime
 
 Register the repository implementations in Dependency Injection.
 
 Ensure that application services can depend on the repository interfaces without referencing their Infrastructure implementations.
 
-## 6 - Verify Repository and Unit of Work Behavior
-
-Verify that:
-
-* Repository implementations can access the corresponding Catalog entities.
-* Changes can be persisted through `<span>IUnitOfWork</span>`.
-* Repository interfaces resolve correctly through Dependency Injection.
-* EF Core persistence works with the existing Catalog database schema.
-
 ## Result
 
-The Catalog repository contracts and implementations are established, Unit of Work is integrated with `<span>CatalogContext</span>`, and repository dependencies are configured for use by the application layer.
+The Catalog repository contracts and implementations are established, Unit of Work is integrated with `CatalogContext`, and repository dependencies are configured for use by the application layer.
 
 ## Related Files
 

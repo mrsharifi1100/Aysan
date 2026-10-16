@@ -6,20 +6,13 @@ API versioningis the process of managing and tracking changes to an API. It also
 
 Add API Versioning to the Catalog API to support multiple versions of the API and allow future changes to the API contract without breaking existing clients.
 
-## 1 - Installation Packages
-
-Packages need for Api Versioning :
-
-* `Asp.Versioning.Http`
-* `Asp.Versioning.Mvc.ApiExplorer`
-
-## 2 - Add Service Registration
+## 1 - Add Service Registration
 
 Register and configure API Versioning services in:add service and config in :
 
 `DependencyInjection`
 
-## 3 - Create Version Folder Structure
+## 2 - Create Version Folder Structure
 
 Create a version-specific folder structure for the controllers.
 
@@ -30,13 +23,13 @@ Controllers/
 
 Future versions can be added as needed:
 
-## 4 - Create Base Version Controller
+## 3 - Create Base Version Controller
 
 Create a base controller to provide common API versioning configuration for the Catalog controllers.
 
 The version configuration is defined in the base controller so that individual controllers can inherit the common configuration.
 
-## 5 - Inherit Controllers
+## 4 - Inherit Controllers
 
 Catalog controllers inherit from the base version controller.
 
@@ -51,7 +44,7 @@ V1/
 
 This allows controllers to follow the versioning configuration defined by the base controller.
 
-## 6 - Define API Version
+## 5 - Define API Version
 
 Assign the appropriate API version to the controller endpoints.
 

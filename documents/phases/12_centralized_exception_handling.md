@@ -4,36 +4,27 @@
 
 Implement a reusable exception-handling infrastructure in BuildingBlocks to provide consistent error responses across Aysan microservices using ASP.NET Core `<span>IExceptionHandler</span>` and the `<span>ProblemDetails</span>` standard.
 
-## 1. Create Common Error Handling BuildingBlock
+## 1 - Create Common Error Handling BuildingBlock
 
-Create a `Common.ErrorHandling` Class Library under `src/BuildingBlocks/`.
+Create a `Common.ErrorHandling` Class Library under `src/BuildingBlocks/ErrorHandler`.
 
 Include the following components:
 
-* `GlobalExceptionHandler` to handle unhandled exceptions, log errors, and generate standardized HTTP error responses.
-* `IExceptionToProblemDetailsMapper` to define a contract for mapping service-specific exceptions to `ProblemDetails`.
-* `ExceptionHandlingExtensions` to register the shared exception handler and configure the middleware.
+* `GlobalExceptionHandler` to handle unhandled exceptions using ASP.NET Core's `IExceptionHandler`, log errors, and generate standardized `ProblemDetails` responses.
+* `IExceptionToProblemDetailsMapper` to define a contract for mapping service-specific exceptions to HTTP error responses.
+* `ExceptionHandlingExtensions` to register the shared exception handler and configure exception-handling middleware.
+
+The handler must return mapped responses for recognized exceptions and a generic `500 Internal Server Error` response for unrecognized exceptions.
+
+Include the request path in the `instance` property and prevent sensitive implementation details from being exposed.
 
 Use the `Microsoft.AspNetCore.App` framework reference to access the required ASP.NET Core APIs.
 
-## 2. Implement Global Exception Handling
-
-Implement `GlobalExceptionHandler` using ASP.NET Core's `IExceptionHandler`.
-
-The handler must:
-
-* Attempt to map exceptions using the registered exception mappers.
-* Return the mapped `ProblemDetails` when an exception is recognized.
-* Return a generic `500 Internal Server Error` response for unrecognized exceptions.
-* Log unhandled exceptions.
-* Include the request path in the `instance` property.
-* Prevent sensitive implementation details from being exposed in error responses.
-
-## 3. Create Catalog Exception Mapper
+## 2. Create Catalog Exception Mapper
 
 Add `CatalogExceptionMapper` under `Catalog.Api/ExceptionHandling/`.
 
-Implement `IExceptionToProblemDetailsMapper` to map Catalog-specific exceptions to appropriate HTTP status codes and stable error codes.
+Implement `IExceptionToProblemDetailsMapper` to map Catalog-specific exceptions defined in `Catalog.Application/Features/Catalog/Exceptions/` to appropriate HTTP status codes and stable error codes.
 
 Examples:
 
@@ -42,32 +33,15 @@ Examples:
 
 Keep service-specific exception mapping inside `Catalog.Api` rather than the shared BuildingBlock.
 
-## 4. Register Exception Handling
+> The Application layer defines the exceptions, while the API layer maps them to HTTP responses.
+
+## 3. Register Exception Handling
 
 Register the shared exception handler and the Catalog exception mapper in `Catalog.Api` dependency injection.
 
 Enable exception-handling middleware in the ASP.NET Core request pipeline before the middleware and endpoints whose exceptions need to be handled.
 
 Keep the Application and Domain layers independent of ASP.NET Core and HTTP-specific response models.
-
-## 5. Standardize Error Responses
-
-Use `ProblemDetails` as the standard HTTP error response format.
-
-Include the appropriate HTTP status code, a descriptive title, a safe detail message, the request path, and a stable error code in the response extensions.
-
-Do not expose stack traces, database details, connection strings, or other sensitive information in Production responses.
-
-## 6. Validate Exception Handling
-
-Verify that:
-
-* Known Catalog exceptions return their expected HTTP status codes and error codes.
-* Unknown exceptions return a generic `500 Internal Server Error` response.
-* The HTTP status code matches the `status` property in the response body.
-* Error responses follow the `ProblemDetails` format.
-* Exceptions are logged appropriately.
-* Adding another microservice does not require duplicating `GlobalExceptionHandler`.
 
 ## Result
 
