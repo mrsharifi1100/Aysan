@@ -1,4 +1,6 @@
-﻿namespace Catalog.Infrastructure;
+﻿using Catalog.Infrastructure.Features.Redis;
+
+namespace Catalog.Infrastructure;
 
 public static class DependencyInjection
 {
@@ -8,6 +10,7 @@ public static class DependencyInjection
 
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(TransactionBehaviour<,>));
 
+        services.AddRedisInfrastructure(configuration);
         return services;
     }
 }

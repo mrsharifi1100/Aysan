@@ -12,6 +12,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.2.0" />
+	  <PackageReference Include="StackExchange.Redis" Version="4.0.127-alpha" />
 	</ItemGroup>
 
 </Project>

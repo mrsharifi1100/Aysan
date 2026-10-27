@@ -25,3 +25,4 @@ global using Microsoft.Extensions.Logging;
 global using Serilog.Context;
 global using Catalog.Infrastructure.Behavior;
 
+global using Catalog.Application.Common.Interfaces;
