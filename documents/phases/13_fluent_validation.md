@@ -9,7 +9,7 @@ Implement centralized request validation using FluentValidation and MediatR pipe
 Remember Packages :
 
 * FluentValidation
-* Microsoft.Extensions.Options.ConfigurationExtensions
+* FluentValidation.DependencyInjectionExtensions
 
 ## 1 - Register FluentValidation Service
 

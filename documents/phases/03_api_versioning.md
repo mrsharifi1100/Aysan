@@ -6,6 +6,13 @@ API versioningis the process of managing and tracking changes to an API. It also
 
 Add API Versioning to the Catalog API to support multiple versions of the API and allow future changes to the API contract without breaking existing clients.
 
+## Tip
+
+Remember this Packages :
+
+* Asp.Versioning.Http
+* Asp.Versioning.Mvc.ApiExplorer
+
 ## 1 - Add Service Registration
 
 Register and configure API Versioning services in:add service and config in :

@@ -20,6 +20,19 @@ Include the request path in the `instance` property and prevent sensitive implem
 
 Use the `Microsoft.AspNetCore.App` framework reference to access the required ASP.NET Core APIs.
 
+
+## Tip
+
+you should change your classLibrarry project near aspnet core for this faz.
+
+add this code in your Property Project
+
+```
+<ItemGroup>
+	<FrameworkReference Include="Microsoft.AspNetCore.App" />
+</ItemGroup>
+```
+
 ## 2. Create Catalog Exception Mapper
 
 Add `CatalogExceptionMapper` under `Catalog.Api/ExceptionHandling/`.

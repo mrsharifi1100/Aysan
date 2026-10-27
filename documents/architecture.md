@@ -97,6 +97,9 @@ Aysan
 |---Serilog
 |---Swagger
 |---Sql Server
+|---Cqrs
+|---EFCore
+|---Dapper
 ```
 
 ## Containerization
@@ -105,6 +108,8 @@ Aysan
 Docker Compose
 |
 |---Catalog Api
+|---Common.ErrorHandling
+|---Common.Logging
 ```
 
 ## Project Structure
@@ -114,32 +119,40 @@ Docker Compose
 Aysan/
 |
 |___ src/
-|   |___ Services/
-|   |    |___ Catalog/
-|   |        |___ Catalog.Api/
-|   |        |      |___ Dockerfile
-|   |        |      |___ Controllers/
-|   |        |      |___ Logs/
-|   |        |___ Catalog.Domain/
-|   |        |    |___ AggregateModel/
-|   |        |    |   |___ CatalogItemAggregate/
-|   |        |    |   |___ CatalogTypeAggregate/
-|   |        |    |___ Common/
-|   |        |    |___ Exceptions/
-|   |        |___ Catalog.Application/
-|   |        |___ Catalog.Infrastructure/
-|   |             |___ Features
-|   |                 |___ Database
-|   |                     |___ Configurations/
-|   |                     |___ Context/
-|   |                     |___ Migrations/
-|   |                     |___ Repositories
-|   |
-|   |  
 |   |___ BuildingBlocks/
-│         └── Logging/ 
-│               └── Common.Logging/ 
-|
+|   |    |___ ErrorHandler
+|   |    |    |___ Common.ErrorHandler/
+|   |    |___ Logging/
+|   |        |____ Common.Logging/
+|   |
+|   |___ Services/
+|       |___ Catalog/
+|           |___ Catalog.Api/
+|           |      |___ ExceptionHandling/
+|           |      |___ Dockerfile
+|           |      |___ Controllers/
+|           |      |___ Logs/
+|           |___ Catalog.Domain/
+|           |    |___ AggregateModel/
+|           |    |   |___ CatalogItemAggregate/
+|           |    |   |___ CatalogTypeAggregate/
+|           |    |___ Common/
+|           |    |___ Exceptions/
+|           |___ Catalog.Application/
+|           |    |___Behaviors/
+|           |    |___Common/
+|           |    |___Features/
+|           |        |___Catalog/
+|           |___ Catalog.Infrastructure/
+|                |___ Behaviors
+|                |___ Features
+|                    |___ Database
+|                        |___ Configurations/
+|                        |___ Context/
+|                        |___ Migrations/
+|                        |___ Repositories
+|                        |___ Dapper/
+|                        |___ Options/
 |___ docs/
 |
 |___ .env
