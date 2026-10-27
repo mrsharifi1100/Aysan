@@ -6,6 +6,7 @@ public static class ExceptionHandlingExtensions
         this IServiceCollection services)
     {
         services.AddExceptionHandler<GlobalExceptionHandler>();
+        services.AddProblemDetails();
 
         return services;
     }
