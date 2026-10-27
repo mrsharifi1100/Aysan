@@ -1,5 +1,8 @@
 <Solution>
   <Folder Name="/src/" />
+  <Folder Name="/src/ApiGateways/">
+    <Project Path="src/ApiGateways/GateWay.Web/GateWay.Web.csproj" Id="88640bd6-0f3b-4e2b-8e4e-3303f1b58b40" />
+  </Folder>
   <Folder Name="/src/BuildingBlocks/" />
   <Folder Name="/src/BuildingBlocks/ErrorHandler/">
     <Project Path="src/BuildingBlocks/ErrorHandler/Common.ErrorHandler/Common.ErrorHandler.csproj" Id="520c419e-73c8-4b8a-b150-65364dc84fc7" />

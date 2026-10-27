@@ -9,7 +9,17 @@ services:
     depends_on:
       - redis
       - catalog-db
-  # Sql Server Container
+
+  gateway-web:
+    build:
+      context: .
+      dockerfile: src/ApiGateways/GateWay.Web/Dockerfile
+    ports:
+      - "6001:6001"
+    environment:
+      ASPNETCORE_HTTP_PORTS: 6001
+    depends_on:
+      - catalog-api
 
   catalog-db:
     image: mcr.microsoft.com/mssql/server:2022-latest
