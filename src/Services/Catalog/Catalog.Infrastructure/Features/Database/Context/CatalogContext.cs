@@ -1,18 +1,24 @@
-﻿using System.Data;
+﻿using Catalog.Infrastructure.Features.Database.Extentions;
+using System.Data;
 
 namespace Catalog.Infrastructure.Features.Database.Context
 {
     public class CatalogContext : DbContext,IUnitOfWork
     {
-        public CatalogContext(DbContextOptions options) : base(options)
+        private readonly IMediator _mediator;
+        public CatalogContext(
+            DbContextOptions options,
+            IMediator mediator) : base(options)
         {
-
+            _mediator = mediator;
         }
         public DbSet<CatalogItem> CatalogItems { get; set; }
         public DbSet<CatalogType> CatalogTypes { get; set; }
 
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
         {
+            await _mediator.DispatchDomainEventsAsync(this);
+
             var result = await SaveChangesAsync(cancellationToken);
 
             return result > 0;
@@ -92,7 +98,50 @@ namespace Catalog.Infrastructure.Features.Database.Context
                     "Password=Admin@12345Strong;" +
                     "TrustServerCertificate=True");
 
-            return new CatalogContext(optionsBuilder.Options);
+            return new CatalogContext(optionsBuilder.Options, new NoMediator());
         }
+    }
+}
+class NoMediator : IMediator
+{
+    public IAsyncEnumerable<TResponse> CreateStream<TResponse>(IStreamRequest<TResponse> request, CancellationToken cancellationToken = default)
+    {
+        return null;
+    }
+
+    public IAsyncEnumerable<object?> CreateStream(object request, CancellationToken cancellationToken = default)
+    {
+        return null;
+    }
+
+    public Task Publish(object notification, CancellationToken cancellationToken = default)
+    {
+        return Task.CompletedTask;
+    }
+
+    public Task Publish<TNotification>(TNotification notification, CancellationToken cancellationToken = default) where TNotification : INotification
+    {
+        return Task.CompletedTask;
+    }
+
+    public Task<TResponse> Send<TResponse>(
+    IRequest<TResponse> request,
+    CancellationToken cancellationToken = default)
+    {
+        return Task.FromResult(default(TResponse)!);
+    }
+
+    public Task<object?> Send(
+        object request,
+        CancellationToken cancellationToken = default)
+    {
+        return Task.FromResult<object?>(null);
+    }
+    public Task Send<TRequest>(
+    TRequest request,
+    CancellationToken cancellationToken = default)
+    where TRequest : IRequest
+    {
+        return Task.CompletedTask;
     }
 }

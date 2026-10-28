@@ -1,4 +1,6 @@
-﻿namespace Catalog.Domain.AggregateModel.CatalogItemAggregate;
+﻿using Catalog.Domain.Events;
+
+namespace Catalog.Domain.AggregateModel.CatalogItemAggregate;
 
 public class CatalogItem : Entity, IAggregateRoot
 {
@@ -56,7 +58,24 @@ public class CatalogItem : Entity, IAggregateRoot
         StockThreshold = stockThreshold;
         MaxStockThreshold = maxStockThreshold;
     }
+    public void UpdateName(string newName)
+    {
+        this.Name = newName ?? throw new CatalogDomainException("The name is empty and must be entered");
+    }
+    public void UpdatePrice(decimal newPrice)
+    {
+        if (newPrice <= 0) throw new CatalogDomainException("The price must be than 0.");
 
+        if (newPrice != this.Price)
+        {
+            // raise Event for Price Changed
+            AddDomainEvent(new ProductPriceChangedDomainEvent(newPrice, Price, this));
+
+        }
+
+        this.Price = newPrice;
+
+    }
     private static void ValidateName(string name)
     {
         if (string.IsNullOrWhiteSpace(name))

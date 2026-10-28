@@ -1,5 +1,6 @@
 ﻿using Catalog.Application.Features.Catalog.CreateCatalogItem.Command;
 using Catalog.Application.Features.Catalog.UpdateCatalogItem.Command;
+using Catalog.Application.Features.Catalog.UpdateCatalogItemPrice.Handler;
 
 namespace Catalog.Api.Controllers.v1
 {
@@ -23,6 +24,12 @@ namespace Catalog.Api.Controllers.v1
         {
             var catalogItems = await _mediator.Send(new GetCatalogItemDetailQuery(id));
             return Ok(catalogItems);
+        }
+        [HttpPut("UpdateProductNameAndPrice")]
+        public async Task<ActionResult> UpdateProductNameAndPrice([FromBody] UpdatePriceCommand command)
+        {
+            await _mediator.Send(command);
+            return NoContent();
         }
         [HttpPost]
         public async Task<IActionResult> CreateCatalogItem([FromBody]CreateCatalogCommand command)

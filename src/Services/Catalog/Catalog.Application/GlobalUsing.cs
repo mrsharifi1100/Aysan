@@ -13,3 +13,4 @@ global using Catalog.Application.Features.Catalog.GetCatalogItem.Query;
 global using Catalog.Application.Behaviors;
 global using FluentValidation;
 global using Microsoft.Extensions.Logging;
+global using Catalog.Domain.Events;
