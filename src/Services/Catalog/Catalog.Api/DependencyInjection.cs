@@ -53,8 +53,11 @@ public static class DependencyInjection
 
         services.AddExceptionHandler<GlobalExceptionHandler>();
         services.AddSingleton<IExceptionToProblemDetailsMapper,CatalogExceptionMapper>();
-        
 
+        services.AddGrpc(option =>
+        {
+            option.EnableDetailedErrors = true;
+        });
         return services;
     }
 }

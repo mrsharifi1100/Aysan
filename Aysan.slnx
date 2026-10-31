@@ -17,6 +17,9 @@
     <Project Path="src/Services/Catalog/Catalog.Domain/Catalog.Domain.csproj" Id="6ef6c356-09b1-4366-83a9-2c79c58474dd" />
     <Project Path="src/Services/Catalog/Catalog.Infrastructure/Catalog.Infrastructure.csproj" Id="d8966bf6-23c4-47b7-aa40-abd5aa78ebd2" />
   </Folder>
+  <Folder Name="/src/Services/Discount/">
+    <Project Path="src/Services/Discount/Discount.Api/Discount.Api.csproj" Id="99997c79-2568-4e0c-b768-80ce9bcdc95d" />
+  </Folder>
   <Project Path="docker-compose.dcproj">
     <Build />
   </Project>

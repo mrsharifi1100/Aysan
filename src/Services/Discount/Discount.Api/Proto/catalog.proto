@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "Catalog.Grpc.Proto";
+
+package catalog;
+
+service CatalogGrpc {
+    rpc GetAllCatalogItems (GetAllCatalogItemsRequest)
+        returns (CatalogItemListResponse);
+}
+
+message GetAllCatalogItemsRequest {
+}
+
+message CatalogItemListResponse {
+    repeated CatalogItemResponse data = 1;
+    int64 total_count = 2;
+}
+
+message CatalogItemResponse {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    double price = 4;
+}

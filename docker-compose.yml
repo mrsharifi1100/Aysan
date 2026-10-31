@@ -10,6 +10,15 @@ services:
       - redis
       - catalog-db
 
+  discount-api:
+    image: ${DOCKER_REGISTRY-}discountapi
+    build:
+      context: .
+      dockerfile: src/Services/Discount/Discount.Api/Dockerfile
+    environment:
+      ASPNETCORE_HTTP_PORTS: 8080
+    CatalogGrpcUrl: http://catalog-api:8082
+    
   gateway-web:
     build:
       context: .
